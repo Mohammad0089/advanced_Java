@@ -1,0 +1,37 @@
+package functional_Programming_with_Java;
+import java.util.function.*;
+//import java.util.function.BiFunction;
+
+
+public class test{
+	
+	protected static class Person{
+		String name;
+		Integer age;
+		
+		Person(String n, Integer age){
+			this.name=n;
+			this.age = age;
+		}
+	}
+	protected static class DataLoader{
+		
+		NoArgFunction <Person> loader;
+		DataLoader(Boolean development){
+		loader = development? this::fakePerson:this::realPerson;	//loader= (development)->development? this::fakPerson : this::realPerson;
+		}
+		private Person fakePerson() {
+			return new Person("fake",100);
+		}
+		
+		private Person realPerson() {
+			return new Person ("Real",30);
+		}
+	}
+	public static void main(String[] args) {
+		DataLoader m1 = new DataLoader(true);
+		Person m = m1.loader.apply();
+		System.out.println(m.name + " " + m.age);
+	}
+	
+}

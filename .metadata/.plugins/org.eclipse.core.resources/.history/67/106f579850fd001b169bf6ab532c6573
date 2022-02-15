@@ -1,0 +1,44 @@
+package Lambda_experssion;
+import java.util.ArrayList;
+import java.util.function.Function;
+
+
+class Employee
+{
+	String ename;
+	int salary;
+	
+	Employee(String name,int salary){
+		this.ename = name;
+		this.salary = salary;
+	}
+}
+
+public class Function_demo2 {
+
+	public static void main(String[] args) {
+		ArrayList<Employee> emplist = new <Employee> ArrayList();
+		
+		emplist.add(new Employee("Mohammad" , 50000));
+		emplist.add(new Employee("Jhon" , 30000));
+		emplist.add(new Employee("Ryan" , 20000));
+		
+		Function<Employee , Integer> fn = e->{
+											 	int sal = e.salary;
+											 	if(sal>=10000 && sal <=20000)
+											 		return (int) (sal*0.1);
+											 	else if(sal >=2000 && sal<=30000)
+											 			return (sal*20/100);
+											 	else
+											 		return sal*30/100;
+											 };
+											 
+	  for(Employee emp:emplist) {
+		  int bouns = fn.apply(emp);
+		  System.out.println(emp.ename +" "+emp.salary );
+		  System.out.println("Bouns is: "+bouns);
+	  }
+
+	}
+
+}

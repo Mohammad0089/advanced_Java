@@ -1,0 +1,26 @@
+package functional_Programming_with_Java;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
+
+
+
+public class test{
+	
+	public static Function<Integer,Integer> createMathFunction(Integer x){
+		return (Integer y)->y*x;
+	}
+	
+	
+
+	public static void main(String []a) {
+		
+		Function<String,NoArgFunction<String>> creatGreet = x->() -> "hello "+ x ;
+		NoArgFunction<String> myGreet = creatGreet.apply("Mohammad");
+		System.out.println(myGreet.apply());
+
+		// Creating functions using createMathFunction
+		Function<Integer, Integer>TimesTwo = createMathFunction(2).apply();
+
+	}
+}

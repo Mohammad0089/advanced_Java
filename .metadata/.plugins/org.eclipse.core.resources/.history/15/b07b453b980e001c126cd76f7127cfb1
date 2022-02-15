@@ -1,0 +1,22 @@
+package functional_Programming_with_Java;
+
+import java.io.PrintStream;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+
+
+
+public class test{
+	
+    //Function<Integer,Function<Integer>> multiplyerCreator;
+    
+	static NoArgFunction<NoArgFunction<String>> greeter = ()->()->"hello";
+
+
+	
+	public static void main(String []a) {
+
+		System.out.println(greeter.apply().apply());
+
+	}
+}

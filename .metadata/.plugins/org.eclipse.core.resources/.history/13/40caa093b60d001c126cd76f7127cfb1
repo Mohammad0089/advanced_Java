@@ -1,0 +1,12 @@
+package functional_Programming_with_Java;
+
+public class test{
+	protected static class Person{
+		String name;
+	}
+	
+	
+	public static void main(String []a) {
+		
+	}
+}

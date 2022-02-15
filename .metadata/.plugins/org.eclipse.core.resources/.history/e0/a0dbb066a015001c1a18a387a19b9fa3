@@ -1,0 +1,20 @@
+package functional_Programming_with_Java;
+
+import java.util.*;
+
+public class map_filter_reduce {
+
+	public static void main(String[] args) {
+		
+		System.out.println("hello");
+		
+		int[] num = {1,2,3,4,5,6,7,8,9,10};
+		List<int[]> numbers = new ArrayList<int[]>();
+		
+		numbers = Arrays.asList(num);
+		System.out.println(numbers.get(0)[0]);
+		
+
+	}
+
+}

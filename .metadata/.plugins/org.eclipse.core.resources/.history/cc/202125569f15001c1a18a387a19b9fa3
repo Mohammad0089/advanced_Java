@@ -1,0 +1,13 @@
+package functional_Programming_with_Java;
+
+import java.util.*;
+
+public class map_filter_reduce {
+
+	public static void main(String[] args) {
+		
+		System.out.println("hello");
+
+	}
+
+}
